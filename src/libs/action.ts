@@ -13,8 +13,9 @@ export interface Blog {
 export async function fetchBlogs(): Promise<Blog[]> {
     try {
       const response = await fetch(`${process.env.BASE_URL}/api/get-blog`, {
-        cache: 'no-store',
-        next: { revalidate: 60 }
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+
       });
   
       if (!response.ok) {
@@ -40,8 +41,8 @@ export async function fetchBlogs(): Promise<Blog[]> {
 export async function fetchBlogById(id: string) {
     try {
         const response = await fetch(`${process.env.BASE_URL}/api/get-blog-detail/${id}`, {
-          cache: 'no-store',
-          next: { revalidate: 60 }
+          method: "GET",
+          headers: { "Content-Type": "application/json" },  
         });
     
         if (!response.ok) {
