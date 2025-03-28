@@ -1,13 +1,14 @@
 import { Metadata } from 'next';
+import { Inter as CustomFont } from 'next/font/google';
+import React from 'react';
 
 import { SITE } from '~/config.js';
 
 import Providers from '~/components/atoms/Providers';
 import Header from '~/components/widgets/Header';
-import Announcement from '~/components/widgets/Announcement';
 import Footer2 from '~/components/widgets/Footer2';
+import Announcement from '~/components/widgets/Announcement';
 
-import { Inter as CustomFont } from 'next/font/google';
 import '~/assets/styles/base.css';
 
 const customFont = CustomFont({ subsets: ['latin'], variable: '--font-custom' });
@@ -24,6 +25,16 @@ export const metadata: Metadata = {
   description: SITE.description,
 };
 
+// Extend the types for your components to accept className
+interface WithClassName {
+  className?: string;
+}
+
+// Update component imports or types
+const ProvidersWithType: React.FC<{ children: React.ReactNode }> = Providers;
+const HeaderWithType: React.FC<WithClassName> = Header;
+const Footer2WithType: React.FC<WithClassName> = Footer2;
+
 export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en" className={`motion-safe:scroll-smooth ${customFont.variable} font-sans`}>
@@ -38,7 +49,7 @@ export default function RootLayout({ children }: LayoutProps) {
           text-gray-900 
           dark:text-slate-300 
           dark:bg-slate-900
-             2xl:scale-[0.95] 
+          2xl:scale-[0.95] 
           2xl:origin-top-left 
           2xl:w-[105.3%] 
           2xl:h-screen
@@ -47,17 +58,17 @@ export default function RootLayout({ children }: LayoutProps) {
           2xl:flex-col
         "
       >
-        <Providers className="2xl:flex-grow">
-          {/* <Announcement /> */}
-          <Header />
-          <main className="2xl:flex-grow">{children}</main>
-          <Footer2 className="2xl:flex-shrink-0" />
-        </Providers>
+        <div className="2xl:flex-grow">
+          <ProvidersWithType>
+            <HeaderWithType />
+            <main className="2xl:flex-grow">{children}</main>
+            <Footer2WithType className="2xl:flex-shrink-0" />
+          </ProvidersWithType>
+        </div>
       </body>
     </html>
   );
 }
-
 // tracking-tight 
 // antialiased 
 // text-gray-900 
