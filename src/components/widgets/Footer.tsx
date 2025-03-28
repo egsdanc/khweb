@@ -1,5 +1,5 @@
 import { footerData } from '~/shared/data/global.data';
-
+import Image from 'next/image';
 const Footer = () => {
   const { title, links, columns, socials, footNote } = footerData;
 
@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
         <div className="py-6 md:flex md:items-center md:justify-between md:py-8">
           <ul className="mb-4 flex md:order-1 md:ml-4 rtl:md:ml-0 rtl:md:mr-4 md:mb-0">
-            {socials.map(({ label, icon: Icon, href }, index) => (
+            {/* {socials.map(({ label, icon: Icon, href }, index) => (
               <li key={`item-social-${index}`}>
                 <a
                   className="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
@@ -62,9 +62,24 @@ const Footer = () => {
                   href={href}
                 >
                   {Icon && <Icon className="h-5 w-5" />}
-                </a>
+                </a>	https://www.iyzico.com/assets/images/content/logo.svg?v=v4.0.558
               </li>
-            ))}
+            ))} */}
+                     <li key={`item-social-${1}`}>
+                <div
+                  className="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                >
+                        <Image
+                                 className="mx-auto"
+                                 src={"https://www.iyzico.com/assets/images/content/logo.svg?v=v4.0.558"}
+                                 alt={"Iyzico"}
+                                 width={60}
+                                 height={30}
+                                 loading="eager"
+                                 priority
+                               />
+                </div>
+              </li>
           </ul>
           {footNote}
         </div>

@@ -128,7 +128,7 @@ export const featuresHome: FeaturesProps = {
       icon: IconComponents,
       callToAction: {
         text: 'Şimdi keşfedin',
-        href: '/',
+        href: '/blog',
       },
     },
     {
@@ -139,7 +139,7 @@ export const featuresHome: FeaturesProps = {
       icon: IconListCheck,
       callToAction: {
         text: 'Şimdi keşfedin',
-        href: '/',
+        href: '/blog',
       },
     },
     {
@@ -149,7 +149,7 @@ export const featuresHome: FeaturesProps = {
       icon: IconBrandTailwind,
       callToAction: {
         text: 'Şimdi keşfedin',
-        href: '/',
+        href: '/blog',
       },
     },
     {
@@ -159,7 +159,7 @@ export const featuresHome: FeaturesProps = {
       icon: IconArrowsRightLeft,
       callToAction: {
         text: 'Şimdi keşfedin',
-        href: '/',
+        href: '/blog',
       },
     },
     {
@@ -169,7 +169,7 @@ export const featuresHome: FeaturesProps = {
       icon: IconBulb,
       callToAction: {
         text: 'Şimdi keşfedin',
-        href: '/',
+        href: '/blog',
       },
     },
     {
@@ -179,7 +179,7 @@ export const featuresHome: FeaturesProps = {
       icon: IconRocket,
       callToAction: {
         text: 'Şimdi keşfedin',
-        href: '/',
+        href: '/blog',
       },
     },
   ],
@@ -389,7 +389,7 @@ Eksiksiz ve Detaylı Kilometre Analizi Sunma\n
 Anlık Veri İşleme ve Hızlı Raporlama\n
 Kilometre Bilgisi ile Servis Süreçlerinin Karşılaştırılması`,
       image: {
-        src: 'https://images.unsplash.com/photo-1659057106920-da022cfbc0cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
+        src: 'https://emojigraph.org/media/openmoji/bar-chart_1f4ca.png',
         alt: 'Kelsey Arden',
       },
       href: '/',
@@ -402,7 +402,7 @@ Mobil ve Masaüstü Cihazlarla Tam Uyum\n
 Anlık Güncelleme ve Entegre Yazılım Destekleri\n
 Gelişmiş Çoklu Dil Desteği`,
       image: {
-        src: 'https://images.unsplash.com/photo-1665984867752-6370ab5ae35e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
+        src: 'https://emojigraph.org/media/apple/globe-with-meridians_1f310.png',
         alt: 'Lisa Gordon',
       },
       href: '/',
@@ -415,7 +415,7 @@ DPF (Dizel Partikül Filtresi) Kayıtlarından Kilometre Bilgisi Çekme\n
 Fren ve Hızlandırma Sensörlerinden Anlık Veri Okuma\n
 Yakıt Tüketim Verilerinden Kilometre Tahmini`,
       image: {
-        src: 'https://images.unsplash.com/photo-1694287877106-ee22f764aef1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
+        src: 'https://symbl-world.akamaized.net/i/webp/10/bdb221f9124c16a871817dbd1607a4.webp',
         alt: 'Keith Young',
       },
       href: '/',
@@ -434,7 +434,7 @@ Anahtar Sistemi Üzerinden Kilometre Bilgisi Çekme\n
 Hata Kodlarından Kilometre Bilgisi Çözümleme\n
 Lastik Basınç Sensöründen Kilometre Bilgisi Çekme`,
       image: {
-        src: 'https://images.unsplash.com/photo-1619734086067-24bf8889ea7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
+        src: 'https://emojigraph.org/media/apple/gear_2699-fe0f.png',
         alt: 'Tayla Kirsten',
       },
       href: '/',
@@ -451,7 +451,7 @@ Araç Marka ve Modeline Göre Özel Kilometre Çözümleme\n
 Elektronik Kontrol Ünitelerinden (ECU) Veri Çekme\n
 Can-Bus Hattı Üzerinden Kilometre Bilgisi Toplama`,
       image: {
-        src: 'https://images.unsplash.com/photo-1565049786474-1dea82a8b995?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
+        src: 'https://emojigraph.org/media/apple/floppy-disk_1f4be.png',
         alt: 'Silver Jordan',
       },
       href: '/',
@@ -465,7 +465,7 @@ Farklı Marka ve Modellerle Tam Uyumlu Sistemler\n
 Eski ve Yeni Nesil Araçlar için Gelişmiş Algoritmalar\n
 Elektriksel ve Mekanik Sensörlerden Veri Çekme Yeteneği`,
       image: {
-        src: 'https://images.unsplash.com/photo-1572417884940-c24659be6068?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
+        src: 'https://emojigraph.org/media/apple/stopwatch_23f1-fe0f.png',
         alt: 'Sarah Johnson',
       },
       href: '/',

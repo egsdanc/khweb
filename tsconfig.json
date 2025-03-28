@@ -24,6 +24,6 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(blog)/blog/page.tsx", "app/(blog)/[slug]/page.jsx", "app/services/paymentService.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/oldblog/(blog)/blog/page.tsx", "app/oldblog/(blog)/[slug]/page.jsx", "app/services/paymentService.js"],
   "exclude": ["node_modules"]
 }

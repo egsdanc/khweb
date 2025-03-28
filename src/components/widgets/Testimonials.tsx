@@ -121,7 +121,7 @@ const Testimonials = ({
         }`}
       >
         {!callToAction && href ? (
-          <Link href={href} target="_blank" rel="noopener noreferrer">
+          // <Link href={href} target="_blank" rel="noopener noreferrer">
             <ItemTestimonial
               name={name || 'Anonim Kullanıcı'}
               job={job}
@@ -140,7 +140,7 @@ const Testimonials = ({
               jobClass="text-sm"
               imageClass="mr-4 rtl:mr-0 rtl:ml-4 h-10 w-10 rounded-full"
             />
-          </Link>
+          //  </Link> 
         ) : (
           <ItemTestimonial
             name={name || 'Anonim Kullanıcı'}

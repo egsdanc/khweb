@@ -61,7 +61,7 @@ const CallToAction2 = ({ title, subtitle, items }: CallToActionProps) => (
                   <a
                     href={href}
                     className="w-full sm:mb-0"
-                    target="_blank"
+                 //   target="_blank"
                     rel="noopener noreferrer"
                     key={`item-cta-${index}`}
                   >

@@ -1,5 +1,5 @@
+import Image from 'next/image';
 import { footerData2 } from '~/shared/data/global.data';
-
 const Footer2 = () => {
   const { links, columns, socials, footNote } = footerData2;
 
@@ -21,9 +21,9 @@ const Footer2 = () => {
           </div>
         ))}
         <div className="col-span-4 sm:col-span-2 md:col-span-2 lg:col-span-1 xl:col-span-1">
-          <div className="mb-2 font-medium text-gray-800 dark:text-gray-300">Social</div>
+          <div className="mb-2 font-medium text-gray-800 dark:text-gray-300">Güvenli Ödeme</div>
           <ul className="mb-4 -ml-2 rtl:ml-0 rtl:-mr-2 flex md:order-1 md:mb-0">
-            {socials.map(({ label, icon: Icon, href }, index) => (
+            {/* {socials.map(({ label, icon: Icon, href }, index) => (
               <li key={`item-social-${index}`}>
                 <a
                   className="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
@@ -33,7 +33,22 @@ const Footer2 = () => {
                   {Icon && <Icon className="h-5 w-5" />}
                 </a>
               </li>
-            ))}
+            ))} */}
+            <li key={`item-social-${1}`}>
+              <div
+                className="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+              >
+                <Image
+                  className="mx-auto"
+                  src={"https://www.iyzico.com/assets/images/content/logo.svg?v=v4.0.558"}
+                  alt={"Iyzico"}
+                  width={60}
+                  height={30}
+                  loading="eager"
+                  priority
+                />
+              </div>
+            </li>
           </ul>
         </div>
       </div>
