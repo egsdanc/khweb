@@ -31,7 +31,12 @@ export default async function BlogPage() {
             className="flex flex-col overflow-hidden rounded-xl border border-gray-200 shadow-lg"
           >
             <Link href={`/blog/${post.id}`} className="block">
-              <div className="relative w-full h-[250px]"> {/* Fixed height container */}
+              <div className="relative w-full h-[250px] bg-gray-200"> {/* Added bg-gray-200 for placeholder */}
+                {/* Loading spinner */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-8 h-8 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
+                </div>
+                
                 <Image 
                   fill
                   style={{ objectFit: 'cover' }}
@@ -41,9 +46,12 @@ export default async function BlogPage() {
                     : "https://kilometrehacker.com/wp-content/uploads/2025/01/AdobeStock_116699042-2048x1393.jpeg"
                   }
                   className="absolute inset-0 w-full h-full"
+                  priority={posts.indexOf(post) < 4} // Prioritize loading first 4 images
+                  placeholder="blur" 
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAEDgJhQUqCMgAAAABJRU5ErkJggg=="
                 />
               </div>
-              <div className="p-4 pb-6"> {/* Added padding to bottom */}
+              <div className="p-4 pb-6">
                 <h2 className="font-bold line-clamp-2 min-h-[60px]">{post.title}</h2>
               </div>
             </Link>

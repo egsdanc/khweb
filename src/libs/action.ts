@@ -11,25 +11,26 @@ export interface Blog {
 }
 
 export async function fetchBlogs(): Promise<Blog[]> {
-    try {
-      const response = await fetch(`${process.env.BASE_URL}/api/get-blog`, {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
+  try {
+    const response = await fetch(`${process.env.BASE_URL}/api/get-blog`, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+      cache: 'no-store'
+    });
 
-      });
-  
-      if (!response.ok) {
-        throw new Error('Failed to fetch blogs');
-      }
-  
-      const data = await response.json();
-      return data.blogs || []; // `blogs` dizisini döndür
-  
-    } catch (error) {
-      console.error('Error fetching blogs:', error);
-      return [];
+    if (!response.ok) {
+      throw new Error('Failed to fetch blogs');
     }
+    
+    const data = await response.json();
+    console.log("Fetched blogs:", data); // Log after parsing JSON
+    
+    return data.blogs || []; // Return the blogs array
+  } catch (error) {
+    console.error('Error fetching blogs:', error);
+    return [];
   }
+}
   
 
 
@@ -43,6 +44,8 @@ export async function fetchBlogById(id: string) {
         const response = await fetch(`${process.env.BASE_URL}/api/get-blog-detail/${id}`, {
           method: "GET",
           headers: { "Content-Type": "application/json" },  
+          cache: 'no-store'
+
         });
     
         if (!response.ok) {

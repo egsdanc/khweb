@@ -1,4 +1,4 @@
-// app/blog/[id]/page.tsx
+ // app/blog/[id]/page.tsx
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -31,13 +31,20 @@ export default async function BlogDetailPage({
         <h1 className="text-3xl font-bold mb-4 text-center text-black dark:text-white">
           {blog.title}
         </h1>
-        <div className="relative w-full h-96">
+        <div className="relative w-full h-96 bg-gray-200"> {/* Added bg-gray-200 for placeholder */}
+          {/* Loading spinner */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-12 h-12 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
+          </div>
+          
           <Image
             src={blog.cover_image ? `${process.env.ADMIN_PANEL_URL}/${blog.cover_image}` : "https://kilometrehacker.com/wp-content/uploads/2025/01/AdobeStock_116699042-2048x1393.jpeg"}
             alt={blog.title}
             fill
             className="object-cover"
             priority
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAEDgJhQUqCMgAAAABJRU5ErkJggg=="
           />
         </div>
 
