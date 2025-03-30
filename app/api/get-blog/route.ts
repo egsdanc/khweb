@@ -10,55 +10,30 @@ const dbConfig = {
   database: process.env.MYSQL_DATABASE!,
 };
 
+const pool = mysql.createPool(dbConfig);
+
 export async function GET() {
   try {
-    // Create database connection
-    const connection = await mysql.createConnection(dbConfig);
-
+    const connection = await pool.getConnection();
     try {
-      // Fetch all blogs with full details
       const [rows]: any = await connection.execute(
-        `SELECT 
-          id, 
-          title, 
-          content, 
-          cover_image, 
-          created_at 
-        FROM blogs 
-        ORDER BY created_at DESC`
+        `SELECT id, title, content, cover_image, created_at FROM blogs ORDER BY created_at DESC`
       );
+      connection.release(); // Bağlantıyı geri bırak
 
-      // If no results found
-      if (!rows.length) {
-        return NextResponse.json({ 
-          message: "No blogs found", 
-          blogs: [] 
-        }, { 
-          status: 404,
-          headers: {
-            'Cache-Control': 'no-store, must-revalidate, max-age=0',
-            'Pragma': 'no-cache',
-            'Expires': '0'
-          }
-        });
-      }
-
-      // Return blogs with cache-busting headers
       return NextResponse.json({ 
         message: "Blogs retrieved successfully", 
         blogs: rows 
       }, { 
         status: 200,
         headers: {
-          'Cache-Control': 'no-store, must-revalidate, max-age=0',
-          'Pragma': 'no-cache',
-          'Expires': '0'
+          'Cache-Control': 'no-store, must-revalidate, max-age=0'
         }
       });
 
-    } finally {
-      // Always close the connection
-      await connection.end();
+    } catch (error) {
+      connection.release();
+      throw error;
     }
   } catch (error) {
     console.error("Database error:", error);
@@ -66,12 +41,7 @@ export async function GET() {
       message: "Server error", 
       error: error instanceof Error ? error.message : "Unknown error" 
     }, { 
-      status: 500,
-      headers: {
-        'Cache-Control': 'no-store, must-revalidate, max-age=0',
-        'Pragma': 'no-cache',
-        'Expires': '0'
-      }
+      status: 500
     });
   }
 }
