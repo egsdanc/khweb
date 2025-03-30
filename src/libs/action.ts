@@ -15,7 +15,7 @@ export async function fetchBlogs(): Promise<Blog[]> {
     const response = await fetch(`${process.env.BASE_URL}/api/get-blog`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
-   //   cache: 'no-store'
+      cache: 'no-store'
     });
 
     if (!response.ok) {
@@ -44,7 +44,7 @@ export async function fetchBlogById(id: string) {
         const response = await fetch(`${process.env.BASE_URL}/api/get-blog-detail/${id}`, {
           method: "GET",
           headers: { "Content-Type": "application/json" },  
-   //       cache: 'no-store'
+          cache: 'no-store'
 
         });
     
