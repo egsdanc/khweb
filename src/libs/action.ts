@@ -14,9 +14,15 @@ export async function fetchBlogs(): Promise<Blog[]> {
   try {
     const response = await fetch(`${process.env.BASE_URL}/api/get-blog`, {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "Content-Type": "application/json",
+        "Cache-Control": "no-cache, no-store, must-revalidate",
+        "Pragma": "no-cache"
+      },
       cache: 'no-store'
     });
+  
+  
 
     if (!response.ok) {
       throw new Error('Failed to fetch blogs');
@@ -43,9 +49,12 @@ export async function fetchBlogById(id: string) {
     try {
         const response = await fetch(`${process.env.BASE_URL}/api/get-blog-detail/${id}`, {
           method: "GET",
-          headers: { "Content-Type": "application/json" },  
+          headers: { 
+            "Content-Type": "application/json",
+            "Cache-Control": "no-cache, no-store, must-revalidate",
+            "Pragma": "no-cache"
+          },
           cache: 'no-store'
-
         });
     
         if (!response.ok) {
@@ -53,6 +62,8 @@ export async function fetchBlogById(id: string) {
         }
     
         const data = await response.json();
+        console.log("Fetched blogsdetail:", data); // Log after parsing JSON
+
         return data.blog;
       } catch (error) {
         console.error('Error fetching blog:', error);

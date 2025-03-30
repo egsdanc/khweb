@@ -1,4 +1,4 @@
-// app/api/get-blog/route.ts
+ // app/api/get-blog/route.ts
 import { NextResponse } from "next/server";
 import mysql from "mysql2/promise";
 
@@ -33,14 +33,28 @@ export async function GET() {
         return NextResponse.json({ 
           message: "No blogs found", 
           blogs: [] 
-        }, { status: 404 });
+        }, { 
+          status: 404,
+          headers: {
+            'Cache-Control': 'no-store, must-revalidate, max-age=0',
+            'Pragma': 'no-cache',
+            'Expires': '0'
+          }
+        });
       }
 
-      // Return blogs
+      // Return blogs with cache-busting headers
       return NextResponse.json({ 
         message: "Blogs retrieved successfully", 
         blogs: rows 
-      }, { status: 200 });
+      }, { 
+        status: 200,
+        headers: {
+          'Cache-Control': 'no-store, must-revalidate, max-age=0',
+          'Pragma': 'no-cache',
+          'Expires': '0'
+        }
+      });
 
     } finally {
       // Always close the connection
@@ -51,6 +65,13 @@ export async function GET() {
     return NextResponse.json({ 
       message: "Server error", 
       error: error instanceof Error ? error.message : "Unknown error" 
-    }, { status: 500 });
+    }, { 
+      status: 500,
+      headers: {
+        'Cache-Control': 'no-store, must-revalidate, max-age=0',
+        'Pragma': 'no-cache',
+        'Expires': '0'
+      }
+    });
   }
 }

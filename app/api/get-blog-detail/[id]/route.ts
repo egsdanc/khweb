@@ -21,7 +21,14 @@ export async function GET(
       if (!blogId) {
         return NextResponse.json({ 
           message: "Blog ID is required" 
-        }, { status: 400 });
+        }, { 
+          status: 400,
+          headers: {
+            'Cache-Control': 'no-store, must-revalidate, max-age=0',
+            'Pragma': 'no-cache',
+            'Expires': '0'
+          }
+        });
       }
 
       const [rows]: any = await connection.execute(
@@ -39,13 +46,27 @@ export async function GET(
       if (!rows.length) {
         return NextResponse.json({ 
           message: "Blog not found" 
-        }, { status: 404 });
+        }, { 
+          status: 404,
+          headers: {
+            'Cache-Control': 'no-store, must-revalidate, max-age=0',
+            'Pragma': 'no-cache',
+            'Expires': '0'
+          }
+        });
       }
 
       return NextResponse.json({ 
         message: "Blog retrieved successfully", 
         blog: rows[0] 
-      }, { status: 200 });
+      }, { 
+        status: 200,
+        headers: {
+          'Cache-Control': 'no-store, must-revalidate, max-age=0',
+          'Pragma': 'no-cache',
+          'Expires': '0'
+        }
+      });
 
     } finally {
       await connection.end();
@@ -55,6 +76,13 @@ export async function GET(
     return NextResponse.json({ 
       message: "Server error", 
       error: error instanceof Error ? error.message : "Unknown error" 
-    }, { status: 500 });
+    }, { 
+      status: 500,
+      headers: {
+        'Cache-Control': 'no-store, must-revalidate, max-age=0',
+        'Pragma': 'no-cache',
+        'Expires': '0'
+      }
+    });
   }
 }
