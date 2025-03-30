@@ -1,8 +1,10 @@
- // app/api/get-blog/route.ts
+export const dynamic = "force-dynamic"; // API cache'i devre dışı bırak
+export const revalidate = 0; // ISR'yi kapat
+
 import { NextResponse } from "next/server";
 import mysql from "mysql2/promise";
 
-// MySQL connection configuration
+// MySQL connection bilgileri
 const dbConfig = {
   host: process.env.MYSQL_HOST!,
   user: process.env.MYSQL_USER!,
@@ -10,38 +12,32 @@ const dbConfig = {
   database: process.env.MYSQL_DATABASE!,
 };
 
-const pool = mysql.createPool(dbConfig);
-
 export async function GET() {
   try {
-    const connection = await pool.getConnection();
-    try {
-      const [rows]: any = await connection.execute(
-        `SELECT id, title, content, cover_image, created_at FROM blogs ORDER BY created_at DESC`
-      );
-      connection.release(); // Bağlantıyı geri bırak
+    // MySQL bağlantısını oluştur
+    const connection = await mysql.createConnection(dbConfig);
 
-      return NextResponse.json({ 
-        message: "Blogs retrieved successfully", 
-        blogs: rows 
-      }, { 
-        status: 200,
-        headers: {
-          'Cache-Control': 'no-store, must-revalidate, max-age=0'
-        }
-      });
+    // Blog verilerini getir
+    const [rows]: any = await connection.execute(
+      `SELECT id, title, content, cover_image, created_at FROM blogs ORDER BY created_at DESC`
+    );
 
-    } catch (error) {
-      connection.release();
-      throw error;
-    }
+    await connection.end(); // Bağlantıyı kapat
+
+    return NextResponse.json({ 
+      message: "Blogs retrieved successfully", 
+      blogs: rows 
+    }, { 
+      status: 200,
+      headers: {
+        'Cache-Control': 'no-store, must-revalidate, max-age=0' // API'nin her seferinde yeni veri getirmesini sağla
+      }
+    });
   } catch (error) {
     console.error("Database error:", error);
     return NextResponse.json({ 
       message: "Server error", 
-      error: error instanceof Error ? error.message : "Unknown error" 
-    }, { 
-      status: 500
-    });
+      error: "error.message "
+    }, { status: 500 });
   }
 }
