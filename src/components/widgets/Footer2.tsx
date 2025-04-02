@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { footerData2 } from '~/shared/data/global.data';
 
-import kilometrehackerImg from '~/assets/images/logo_band.png';
+import kilometrehackerImg from '../../assets/images/logo_band.png';
 
 const Footer2 = () => {
   const { links, columns, socials, footNote } = footerData2;
