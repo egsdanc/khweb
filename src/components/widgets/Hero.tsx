@@ -5,7 +5,7 @@ import CTA from '../common/CTA';
 const Hero = ({ title, subtitle, tagline, callToAction, callToAction2, image }: HeroProps) => {
   return (
     <section id="heroOne">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+      <div className="mt-20 mx-auto max-w-3xl px-4 sm:px-6 ">
         <div className="py-5 md:py-14">
           <div className="mx-auto max-w-4xl pb-10 text-center md:pb-16">
             {tagline && (
@@ -14,7 +14,7 @@ const Hero = ({ title, subtitle, tagline, callToAction, callToAction2, image }: 
               </p>
             )}
             {title && (
-              <h1 className="leading-tighter font-heading mb-6 text-4xl font-bold tracking-tighter md:text-5xl lg:text-6xl">
+              <h1 className="leading-tighter font-heading mb-3 text-4xl font-bold tracking-tighter md:text-5xl lg:text-5xl">
                 {title}
               </h1>
             )}

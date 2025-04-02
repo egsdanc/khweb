@@ -39,10 +39,12 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-<div className="flex flex-col sm:flex-row  items-center justify-center  w-full">
-  <Hero {...heroHome} />
+<div className="mb-10 mt-14 ml-5 flex flex-col sm:flex-row items-center  justify-center w-full gap-8 ">
+  <div className=" ">
+    <Hero {...heroHome} />
+  </div>
   
-  <div className="relative max-w-5xl">
+  <div className="relative max-w-6xl ">
     <Image
       className="mx-auto"
       src={kilometrehackerImg}
