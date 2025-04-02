@@ -37,27 +37,30 @@ import kmImage from '~/assets/images/km.jpg';
 import carInsideImage from '~/assets/images/carInside.jpg';
 import gasImg from '~/assets/images/gas.jpg';
 import kilometrehackerImg from '~/assets/images/kilometrehacker.png';
+import yolImg from '~/assets/images/yol.png';
 
 // Hero data on Home page *******************
 export const heroHome: HeroProps = {
-  title: (
-    <>
-      Aracınızın gerçek <span className="hidden md:inline"></span> <span>kilometresiyle yüzleşmenin</span>{' '}
-      <span className="sm:whitespace-nowrap">vakti geldi</span>
-    </>
-  ),
-  subtitle: (
-    <>
-      <span className="hidden md:inline">
-        <span className="font-semibold underline decoration-primary-600 decoration-wavy decoration-1 underline-offset-2">
-          {/* TailNext */}
-        </span>{' '}
-        {/* is a production ready template to start your new website using <em>Next.js</em> + <em>Tailwind CSS</em>. */}
-      </span>{' '}
-      Kilometre Hacker, Araç sahipleri ve alıcılar için şeffaflık sağlayarak, ikinci el araç piyasasında olası manipülasyonları tespit etmeye yardımcı olur.
+  // title: (
+  //   <>
+  //     Aracınızın gerçek <span className="hidden md:inline"></span> <span>kilometresiyle yüzleşmenin</span>{' '}
+  //     <span className="sm:whitespace-nowrap">vakti geldi</span>
+  //   </>
+  // ),
+  title:"Aracınızın gerçek kilometresiyle yüzleşmenin vakti geldi",
+  // subtitle: (
+  //   <>
+  //     <span className="hidden md:inline">
+  //       <span className="font-semibold underline decoration-primary-600 decoration-wavy decoration-1 underline-offset-2">
+  //         {/* TailNext */}
+  //       </span>{' '}
+  //       {/* is a production ready template to start your new website using <em>Next.js</em> + <em>Tailwind CSS</em>. */}
+  //     </span>{' '}
+  //     Kilometre Hacker, Araç sahipleri ve alıcılar için şeffaflık sağlayarak, ikinci el araç piyasasında olası manipülasyonları tespit etmeye yardımcı olur.
 
-    </>
-  ),
+  //   </>
+  // ),
+  subtitle: "Kilometre Hacker, Araç sahipleri ve alıcılar için şeffaflık sağlayarak, ikinci el araç piyasasında olası manipülasyonları tespit etmeye yardımcı olur.",
   callToAction: {
     text: 'Şimdi Satın Al',
     href: '/pricing',
@@ -194,8 +197,7 @@ export const contentHomeOne: ContentProps = {
     subtitle: 'Sizi Bir Adım Öteye Taşıyacak Teknoloji',
     tagline: 'Teknoloji',
   },
-  content:
-    'Yeni Nesil Teknoloji, Güvenilir Hizmet.',
+  content:""   ,   // 'Yeni Nesil Teknoloji, Güvenilir Hizmet.'"   
   items: [
     {
       title: 'Change tespiti (VIN numarası değişikliği)',
@@ -261,15 +263,79 @@ export const contentHomeOne: ContentProps = {
     },
     {
       title: 'Araç Beyinlerinden VIN Numarası Çekme',
+        description:
+          '',
+    },
+    {
+      title: 'Gösterge Paneli Kalibrasyonu ve Kilometre Eşleşmesi',
       description:
-        '',
+      '',
+    },
+    {
+      title: 'Araç Tarihçesi Analizi (Kilometre Değişikliklerini İzleme)',
+      description:
+      '',
+    },
+    {
+      title: 'Araç Marka ve Modeline Göre Özel Kilometre Çözümleme',
+      description:
+      '',
+    },
+    {
+      title: 'Elektronik Kontrol Ünitelerinden (ECU) Veri Çekme',
+      description:
+      '',
+    },
+    {
+      title: 'Can-Bus Hattı Üzerinden Kilometre Bilgisi Toplama',
+      description:
+      '',
+    },
+    {
+      title: 'Otomatik Kilometre Raporlama Sistemi',
+      description:
+      '',
+    },
+    {
+      title: 'Araç Beyinlerinden Gerçek Zamanlı Veri Çekme',
+      description:
+      '',
+    },
+    {
+      title: 'Çift Katmanlı Güvenlik Protokolleriyle Veri Koruma',
+      description:
+      '',
+    },
+    {
+      title: 'Farklı Marka ve Modellerle Tam Uyumlu Sistemler',
+      description:
+      '',
+    },
+    {
+      title: 'Eski ve Yeni Nesil Araçlar için Gelişmiş Algoritmalar',
+      description:
+      '',
+    },
+    {
+      title: 'Hata Kodlarının Analizi ve Kilometre Verisiyle Karşılaştırma',
+      description:
+      '',
+    },    {
+      title: 'DPF (Dizel Partikül Filtresi) Kayıtlarından Kilometre Bilgisi Çekme',
+      description:
+      '',
+    },
+    {
+      title: 'Fren ve Hızlandırma Sensörlerinden Anlık Veri Okuma',
+      description:
+      '',
     },
 
   ],
-  image: {
-    src: kmImage,
-    alt: 'Colorful Image',
-  },
+  // image: {
+  //   src: kmImage,
+  //   alt: 'Colorful Image',
+  // },
   isReversed: false,
   isAfterContent: false,
 };
@@ -283,50 +349,65 @@ export const contentHomeTwo: ContentProps = {
   items: [
     {
       title: 'Gösterge Paneli Kalibrasyonu ve Kilometre Eşleşmesi',
+      description: 'Gösterge paneli kalibrasyonu ve kilometre eşleşmesi hizmeti',
     },
     {
       title: 'Hız Sensörlerinden Kilometre Bilgisi Okuma',
+      description: 'Hız sensörlerinden kilometre bilgisi okuma hizmeti',
     },
     {
       title: 'Araç Tarihçesi Analizi (Kilometre Değişikliklerini İzleme)',
+      description: 'Araç tarihçesi analizi ve kilometre değişikliklerini izleme hizmeti',
     },
     {
       title: 'Araç Marka ve Modeline Göre Özel Kilometre Çözümleme',
+      description: 'Araç marka ve modeline göre özel kilometre çözümleme hizmeti',
     },
     {
       title: 'Elektronik Kontrol Ünitelerinden (ECU) Veri Çekme',
+      description: 'Elektronik kontrol ünitelerinden veri çekme hizmeti',
     },
     {
       title: 'Can-Bus Hattı Üzerinden Kilometre Bilgisi Toplama',
+      description: 'Can-Bus hattı üzerinden kilometre bilgisi toplama hizmeti',
     },
     {
       title: 'Otomatik Kilometre Raporlama Sistemi',
+      description: 'Otomatik kilometre raporlama sistemi hizmeti',
     },
     {
       title: 'Araç Beyinlerinden Gerçek Zamanlı Veri Çekme',
+      description: 'Araç beyinlerinden gerçek zamanlı veri çekme hizmeti',
     },
     {
       title: 'Çift Katmanlı Güvenlik Protokolleriyle Veri Koruma',
+      description: 'Çift katmanlı güvenlik protokolleriyle veri koruma hizmeti',
     },
     {
       title: 'Farklı Marka ve Modellerle Tam Uyumlu Sistemler',
+      description: 'Farklı marka ve modellerle tam uyumlu sistemler hizmeti',
     },
     {
       title: 'Eski ve Yeni Nesil Araçlar için Gelişmiş Algoritmalar',
+      description: 'Eski ve yeni nesil araçlar için gelişmiş algoritmalar hizmeti',
     },
     {
       title: 'Hata Kodlarının Analizi ve Kilometre Verisiyle Karşılaştırma',
-    },    {
+      description: 'Hata kodlarının analizi ve kilometre verisiyle karşılaştırma hizmeti',
+    },
+    {
       title: 'DPF (Dizel Partikül Filtresi) Kayıtlarından Kilometre Bilgisi Çekme',
+      description: 'DPF kayıtlarından kilometre bilgisi çekme hizmeti',
     },
     {
       title: 'Fren ve Hızlandırma Sensörlerinden Anlık Veri Okuma',
+      description: 'Fren ve hızlandırma sensörlerinden anlık veri okuma hizmeti',
     },
   ],
-  image: {
-    src: carInsideImage,
-    alt: 'Colorful Image',
-  },
+  // image: {
+  //   src: carInsideImage,
+  //   alt: 'Colorful Image',
+  // },
   isReversed: true,
   isAfterContent: true,
 };
@@ -338,8 +419,8 @@ export const stepsHome: StepsProps = {
   isReversed: false,
   isImageDisplayed: true,
   image: {
-    src: gasImg,
-    alt: 'Steps image',
+    src: yolImg,
+    alt: 'khimage',
   },
   header: {
     title: 'Tüm Sistemlerden Kilometre ve VIN Bilgisi Okuma Teknolojisi',

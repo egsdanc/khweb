@@ -1,5 +1,8 @@
 import Image from 'next/image';
 import { footerData2 } from '~/shared/data/global.data';
+
+import kilometrehackerImg from '~/assets/images/logo_band_colored@3X.png';
+
 const Footer2 = () => {
   const { links, columns, socials, footNote } = footerData2;
 
@@ -40,10 +43,10 @@ const Footer2 = () => {
               >
                 <Image
                   className="mx-auto"
-                  src={"https://www.iyzico.com/assets/images/content/logo.svg?v=v4.0.558"}
+                  src={kilometrehackerImg}
                   alt={"Iyzico"}
-                  width={60}
-                  height={30}
+                  width={300}
+                  height={150}
                   loading="eager"
                   priority
                 />

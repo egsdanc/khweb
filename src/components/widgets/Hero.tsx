@@ -6,7 +6,7 @@ const Hero = ({ title, subtitle, tagline, callToAction, callToAction2, image }: 
   return (
     <section id="heroOne">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="py-12 md:py-20">
+        <div className="py-5 md:py-14">
           <div className="mx-auto max-w-4xl pb-10 text-center md:pb-16">
             {tagline && (
               <p className="text-base font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-200">
@@ -26,7 +26,7 @@ const Hero = ({ title, subtitle, tagline, callToAction, callToAction2, image }: 
               </div>
             </div>
           </div>
-          {image && (
+          {/* {image && (
             <div className="relative max-w-5xl">
               <Image
                 className="mx-auto"
@@ -38,7 +38,7 @@ const Hero = ({ title, subtitle, tagline, callToAction, callToAction2, image }: 
                 priority
               />
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </section>

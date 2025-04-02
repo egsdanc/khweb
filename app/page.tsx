@@ -14,6 +14,8 @@ import Team from '~/components/widgets/Team';
 import CallToAction2 from '~/components/widgets/CallToAction2';
 import Contact from '~/components/widgets/Contact';
 import Hero2 from '~/components/widgets/Hero2';
+import kilometrehackerImg from '~/assets/images/kilometrehacker.png';
+import Image from 'next/image';
 
 import {
   callToAction2Home,
@@ -29,6 +31,7 @@ import {
   teamHome,
   testimonialsHome,
 } from '~/shared/data/pages/home.data';
+import Content3 from '~/components/widgets/Content3';
 export const metadata: Metadata = {
   title: SITE.title,
 };
@@ -36,12 +39,29 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <Hero {...heroHome} />
+<div className="flex flex-col sm:flex-row  items-center justify-center  w-full">
+  <Hero {...heroHome} />
+  
+  <div className="relative max-w-5xl">
+    <Image
+      className="mx-auto"
+      src={kilometrehackerImg}
+      alt="kilometrehacker"
+      width={600}
+      height={300}
+      loading="eager"
+      priority
+    />
+  </div>
+</div>
+
+
       {/* <SocialProof {...socialProofHome} /> */}
       <Steps {...stepsHome} />
       <Features {...featuresHome} />
-      <Content {...contentHomeOne} />
-      <Content {...contentHomeTwo} />
+      <Content3 {...contentHomeOne} />
+      {/* <Content {...contentHomeOne} /> */}
+      {/* <Content {...contentHomeTwo} /> */}
       <Testimonials {...testimonialsHome} />
       {/* <FAQs2 {...faqs2Home} /> */}
       <Pricing {...pricingHome} />
