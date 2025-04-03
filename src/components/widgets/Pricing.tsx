@@ -74,7 +74,7 @@ const Pricing = ({ header, prices, id, hasBackground = false }: PricingProps) =>
                               <IconLoader2 className="animate-spin text-primary-600 w-12 h-12" />
                             ) : (
                               <>
-                                <span className="text-6xl font-extrabold">
+                                <span className="text-5xl font-extrabold">
                                   {dynamicPrice || price}
                                 </span>
                                 <span className="text-5xl">TL</span>

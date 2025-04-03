@@ -29,7 +29,7 @@ const Steps = ({
           <Headline
             header={header}
             containerClass={isImageDisplayed ? 'text-left rtl:text-right' : ''}
-            titleClass="text-3xl sm:text-4xl"
+            titleClass="text-center text-3xl sm:text-4xl"
             subtitleClass={isImageDisplayed ? 'text-left rtl:text-right' : ''}
           />
         )}

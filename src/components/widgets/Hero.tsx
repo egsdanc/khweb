@@ -5,8 +5,8 @@ import CTA from '../common/CTA';
 const Hero = ({ title, subtitle, tagline, callToAction, callToAction2, image }: HeroProps) => {
   return (
     <section id="heroOne">
-      <div className="mt-20 mx-auto max-w-3xl px-4 sm:px-6 ">
-        <div className="py-5 md:py-14">
+<div className="mt-4 sm:mt-20 mx-auto max-w-3xl px-4 sm:px-6">
+          <div className="py-5 md:py-14">
           <div className="mx-auto max-w-4xl pb-10 text-center md:pb-16">
             {tagline && (
               <p className="text-base font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-200">

@@ -22,7 +22,7 @@ const Conten3 = ({
   >
     {header && <Headline header={header} titleClass="text-3xl sm:text-5xl" />}
     <div className="mx-auto w-full">
-      <div className={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
+      <div className={`${isReversed ? 'md:flex-row-reverse' : ''} `}>
         <div className="self-center md:basis-1/2 w-full">
           {content && <div className="mb-8 lg:mb-12 text-lg text-gray-600 dark:text-slate-400">{content}</div>}
           <div className="w-full lg:pl-10">
