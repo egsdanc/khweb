@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import Ode from "~/components/widgets/Ode";
+import SipayPayment from "~/components/widgets/SipayPayment";
 import { Suspense } from "react";
 
 const Page = () => {
@@ -17,7 +17,7 @@ const Content = () => {
   const adet = searchParams.get("adet");
   const adetNumber = adet ? Number(adet) : undefined;
 
-  return <Ode adet={adetNumber} />;
+  return <SipayPayment adet={adetNumber} />;
 };
 
 export default Page;

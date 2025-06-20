@@ -52,7 +52,7 @@ export default async function BlogPage() {
                 />
               </div>
               <div className="p-4 pb-6">
-                <h2 className="font-bold line-clamp-2 min-h-[60px]">{post.title}</h2>
+                <h2 className="font-bold line-clamp-3 min-h-[80px]">{post.title}</h2>
               </div>
             </Link>
           </div>
