@@ -1,5 +1,7 @@
 'use client';
+export const dynamic = 'force-dynamic';
 
+import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
 
@@ -16,21 +18,16 @@ const errorMessageMap: Record<string, string> = {
   // Diğer hata mesajları eklenebilir
 };
 
-export default function PaymentError() {
+function PaymentError() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    // URL'den gelen parametreleri al
     const status = searchParams.get('status');
     const invoice_id = searchParams.get('invoice_id');
     const error_code = searchParams.get('error_code');
     const error_message = searchParams.get('error_message');
     const amount = searchParams.get('amount');
-
     console.log('Payment error data:', { status, invoice_id, error_code, error_message, amount });
-
-    // Burada gerekli işlemleri yapabilirsiniz
-    // Örneğin: Hata loglama, kullanıcıya bildirim gönderme vb.
   }, [searchParams]);
 
   const status = searchParams.get('status');
@@ -39,7 +36,6 @@ export default function PaymentError() {
   const error_message = searchParams.get('error_message');
   const amount = searchParams.get('amount');
 
-  // Türkçeleştirme - Önce error_code'e bak, sonra error_message'a bak
   const errorMessageTr = error_code && errorMessageMap[error_code]
     ? errorMessageMap[error_code]
     : error_message && errorMessageMap[error_message]
@@ -77,5 +73,13 @@ export default function PaymentError() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function Page() {
+  return (
+    <Suspense fallback={<div>Yükleniyor...</div>}>
+      <PaymentError />
+    </Suspense>
   );
 } 

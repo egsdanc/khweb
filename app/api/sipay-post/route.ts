@@ -8,10 +8,10 @@ dotenv.config();
 // Veya
 
 
-console.log('dotenv result:', dotenv.config().parsed.SIPAY_MERCHANT_KEY);
+console.log('dotenv result:', dotenv?.config()?.parsed?.SIPAY_MERCHANT_KEY);
 const SIPAY_BASE_URL = process.env.SIPAY_BASE_URL;
 const SIPAY_ENDPOINT = "/ccpayment/api/getpos";
-const SIPAY_MERCHANT_KEY = process.env.SIPAY_MERCHANT_KEY || dotenv.config().parsed.SIPAY_MERCHANT_KEY;
+const SIPAY_MERCHANT_KEY = process.env.SIPAY_MERCHANT_KEY || dotenv?.config()?.parsed?.SIPAY_MERCHANT_KEY;
 
 if (!SIPAY_BASE_URL) {
   throw new Error('SIPAY_BASE_URL environment variable is not defined');

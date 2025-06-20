@@ -19,7 +19,7 @@ export async function fetchBlogs(): Promise<Blog[]> {
         "Cache-Control": "no-cache, no-store, must-revalidate",
         "Pragma": "no-cache"
       },
-      cache: 'no-store'
+  //    cache: 'no-store'
     });
   
   

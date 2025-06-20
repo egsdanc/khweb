@@ -1,5 +1,7 @@
 "use client";
+export const dynamic = 'force-dynamic';
 
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -23,7 +25,7 @@ interface PaymentDetail {
   [key: string]: any;
 }
 
-export default function PaymentSuccess() {
+function PaymentSuccessInner() {
   const searchParams = useSearchParams();
   const invoice_id = searchParams.get("invoice_id");
   const status = searchParams.get("status");
@@ -250,5 +252,13 @@ export default function PaymentSuccess() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function PaymentSuccess() {
+  return (
+    <Suspense fallback={<div>Yükleniyor...</div>}>
+      <PaymentSuccessInner />
+    </Suspense>
   );
 } 

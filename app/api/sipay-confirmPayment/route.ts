@@ -6,7 +6,7 @@ dotenv.config();
 const SIPAY_BASE_URL = process.env.SIPAY_BASE_URL as string;
 const SIPAY_ENDPOINT = '/ccpayment/api/confirmPayment';
 // const SIPAY_MERCHANT_KEY = "$2y$10$HmRgYosneqcwHj.UH7upGuyCZqpQ1ITgSMj9Vvxn.t6f.Vdf2SQFO";
-const SIPAY_MERCHANT_KEY = process.env.SIPAY_MERCHANT_KEY || dotenv.config().parsed.SIPAY_MERCHANT_KEY;
+const SIPAY_MERCHANT_KEY = process.env.SIPAY_MERCHANT_KEY || dotenv?.config()?.parsed?.SIPAY_MERCHANT_KEY;
 const SIPAY_APP_SECRET = process.env.SIPAY_APP_SECRET as string;
 
 if (!SIPAY_BASE_URL || !SIPAY_MERCHANT_KEY || !SIPAY_APP_SECRET) {
@@ -89,7 +89,7 @@ export async function POST(request: Request) {
       body.total,
       '1', // installments_number
       'TRY', // currency_code
-      SIPAY_MERCHANT_KEY,
+      SIPAY_MERCHANT_KEY as string,
       body.invoice_id,
       SIPAY_APP_SECRET
     );

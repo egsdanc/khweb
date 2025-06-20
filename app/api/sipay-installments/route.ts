@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 
 import * as dotenv from 'dotenv';
 dotenv.config();
-const SIPAY_MERCHANT_KEY = process.env.SIPAY_MERCHANT_KEY || dotenv.config().parsed.SIPAY_MERCHANT_KEY;
+const SIPAY_MERCHANT_KEY = process.env.SIPAY_MERCHANT_KEY || dotenv?.config()?.parsed?.SIPAY_MERCHANT_KEY;
 const SIPAY_BASE_URL = process.env.SIPAY_BASE_URL;
 const SIPAY_ENDPOINT = "/ccpayment/api/installments";
 

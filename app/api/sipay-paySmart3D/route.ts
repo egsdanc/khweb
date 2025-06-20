@@ -6,7 +6,7 @@ import crypto from 'crypto';
 import mysql from 'mysql2/promise';
 import * as dotenv from 'dotenv';
 dotenv.config();
-const SIPAY_MERCHANT_KEY = process.env.SIPAY_MERCHANT_KEY || dotenv.config().parsed.SIPAY_MERCHANT_KEY;
+const SIPAY_MERCHANT_KEY = process.env.SIPAY_MERCHANT_KEY || dotenv?.config()?.parsed?.SIPAY_MERCHANT_KEY;
 const SIPAY_BASE_URL = process.env.SIPAY_BASE_URL as string;
 const SIPAY_ENDPOINT = '/ccpayment/api/paySmart3D';
 const SIPAY_APP_SECRET = process.env.SIPAY_APP_SECRET as string;
@@ -185,7 +185,7 @@ export async function POST(request: Request) {
       body.total,
       body.installments_number || '1',
       body.currency_code || 'TRY',
-      SIPAY_MERCHANT_KEY,
+      SIPAY_MERCHANT_KEY as string,
       body.invoice_id,
       SIPAY_APP_SECRET
     );
